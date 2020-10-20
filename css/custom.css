@@ -1,5 +1,19 @@
 .container {
   max-width: 800px; }
+canvas {
+        position: fixed;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        z-index: -1;
+        margin:auto;
+    }
+
+body {
+  background: linear-gradient(#000, #151515);
+}
 .header {
   margin-top: 14rem;
   text-align: center; }
@@ -85,8 +99,9 @@
   left: 5px; }
 .navbar {
   display: none; }
-.text-link { color: #000000; } /* CSS link color (red) */
-.text-link:hover { color: #8DEAF9; } 
+.text-link { color: #ffffff; } /* CSS link color (red) */
+.text-link:hover { color: #747d90; } 
+.navbar-link:hover { color: #951C02; } 
 
 ul > li {
     display: inline-block;
@@ -195,6 +210,7 @@ ul > li {
     font-weight: 600;
     letter-spacing: .2rem;
     margin-right: 35px;
+    margin-left: 5px;
     text-decoration: none;
     line-height: 6.5rem;
     color: #222; }
