@@ -33,12 +33,45 @@ fillRandom(); //create the starting state for the grid by filling it with random
 tick(); //call main loop
 
 //functions
-function tick() { //main loop
+function tick() { //one tick
 	console.time("loop");
 	drawGrid();
 	updateGrid();
 	console.timeEnd("loop");
-    //requestAnimationFrame(tick);
+}
+
+var run_life = false;
+
+function switchLife() {
+    run_life = !run_life;
+}
+
+function killLife() {
+    run_life = false;
+}
+
+function birthLife() {
+    run_life = true;
+}
+
+function checkLife() {
+    return run_life;
+}
+
+function startLife() {
+    switchLife();
+    runLife();
+}
+
+function runLife() { //main loop
+	console.time("loop");
+	drawGrid();
+	updateGrid();
+    run_life = checkLife();
+    if (run_life) {
+	    console.timeEnd("loop");
+        requestAnimationFrame(runLife);
+    }
 }
 
 function createArray(rows) { //creates a 2 dimensional array of required height
