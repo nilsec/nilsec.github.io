@@ -1,9 +1,9 @@
-var gridHeight = 1000;
-var gridWidth = 1000;
+var c = document.getElementById("myCanvas");
+var gridHeight = c.height;
+var gridWidth = c.width;
 var density = 0.55;
 var theGrid = createArray(gridWidth);
 var mirrorGrid = createArray(gridWidth);
-var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 ctx.fillStyle = "#951C02";
 
