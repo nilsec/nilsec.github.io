@@ -14,11 +14,10 @@ canvas {
         max-width: 1000px;
     }
 #toshow{
-    opacity: 1;
+    opacity: 0;
 }
 body {
   background: #000;
-  overscroll-behavior: none;
 }
 .header {
   margin-top: 14rem;
