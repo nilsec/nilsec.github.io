@@ -13,8 +13,12 @@ canvas {
         height: 130%;
         max-width: 1000px;
     }
+#toshow{
+    opacity: 1;
+}
 body {
-  background: linear-gradient(#000, #151515);
+  background: #000;
+  overscroll-behavior: none;
 }
 .header {
   margin-top: 14rem;
