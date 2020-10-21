@@ -7,6 +7,26 @@ var mirrorGrid = createArray(gridWidth);
 var ctx = c.getContext("2d");
 ctx.fillStyle = "#951C02";
 
+function hideBody() {
+    var tohide = document.getElementById("tohide");
+    var toshow = document.getElementById("toshow");
+
+    if (tohide.style.opacity == "0"){
+        tohide.style.opacity = "1";
+        tohide.style.filter  = 'alpha(opacity=1)'; // IE fallback
+        toshow.style.opacity = "0";
+        toshow.style.filter  = 'alpha(opacity=0)'; // IE fallback
+
+    }
+    else {
+        tohide.style.opacity = "0";
+        tohide.style.filter  = 'alpha(opacity=0)'; // IE fallback
+        toshow.style.opacity = "1";
+        toshow.style.filter  = 'alpha(opacity=1)'; // IE fallback
+
+    }
+}
+
 fillRandom(); //create the starting state for the grid by filling it with random cells
 //var bm = getBitmap();
 //fillDet(bm);
