@@ -82,45 +82,6 @@ function createArray(rows) { //creates a 2 dimensional array of required height
 	return arr;
 }
 
-function getBitmap() {
-    var test_map = [
-                    [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1],
-                    [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1],
-                    [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1],
-                    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-                    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-
-                   ];
-
-    return test_map;
-}
-
-function fillDet(bitmap) { //fill the grid deterministically
-    const dimensions = [bitmap.length, bitmap[0].length];
-
-	for (var j = 500; j < dimensions[0]; j++) { //iterate through rows
-		for (var k = 500; k < dimensions[1]; k++) { //iterate through columns
-            if (bitmap[j][k]) {
-			    theGrid[j][k] = Math.round(Math.random()*density);
-            }
-		}
-	}
-}
-
-
 function fillRandom() { //fill the grid randomly
 	for (var j = 100; j < gridHeight - 100; j++) { //iterate through rows
 		for (var k = 100; k < gridWidth - 100; k++) { //iterate through columns
