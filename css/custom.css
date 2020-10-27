@@ -26,12 +26,12 @@ body {
 .project_text {
     text-align: left;
     margin-left: max(20vw, 150px);
-    font-size: max(1.2vw, 10px);
+    font-size: max(1.5vw, 12px);
 }
 
 .section_text {
     text-align: left;
-    font-size: max(1.2vw, 10px);
+    font-size: max(1.5vw, 12px);
 }
 
 .art {
