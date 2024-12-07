@@ -1,4 +1,4 @@
-/* Modern CSS Reset */
+/* Reset */
 *,
 *::before,
 *::after {
@@ -7,17 +7,11 @@
     padding: 0;
 }
 
-/* Remove default margin in browsers */
-body,
-h1,
-h2,
-h3,
-h4,
-p {
-    margin: 0;
+/* Base styles - mobile first */
+html {
+    -webkit-text-size-adjust: 100%;
 }
 
-/* Base styles with px units for consistency */
 body {
     background-color: #000000;
     color: #ffffff;
@@ -26,67 +20,133 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    padding: 32px;
+    padding: 16px;
+    min-height: 100vh;
+    /* Add padding for notched phones */
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
 }
 
 .container {
     width: 100%;
     max-width: 650px;
-    margin: 120px auto 0;
-    padding: 0 20px;
+    margin: 0 auto;
+    padding: 40px 16px;
 }
 
+/* Typography - mobile first sizes */
 h1 {
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 300;
-    margin-bottom: 8px;
+    line-height: 1.2;
+    margin-bottom: 12px;
     letter-spacing: -0.02em;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
+    line-height: 1.4;
     margin-bottom: 32px;
     opacity: 0.8;
 }
 
 p {
     font-size: 16px;
-    margin-bottom: 40px;
+    line-height: 1.6;
+    margin-bottom: 32px;
 }
 
-/* Social Links */
+/* Social Links - mobile friendly touch targets */
 .social-links {
     display: flex;
+    align-items: center;
     gap: 24px;
+    height: 44px;
 }
 
 .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px; /* Minimum touch target size */
+    height: 44px;
     color: #ffffff;
     text-decoration: none;
     opacity: 0.6;
     transition: opacity 0.2s ease;
-}
-
-.social-links a i {
-    font-size: 24px;
+    /* Prevent touch highlight on mobile */
+    -webkit-tap-highlight-color: transparent;
 }
 
 .social-links a:hover {
     opacity: 1;
 }
 
-/* Responsive adjustments using pixels */
-@media (max-width: 600px) {
+.social-links .fa {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+}
+
+/* Tablet and larger */
+@media (min-width: 600px) {
+    body {
+        padding: 32px;
+    }
+
     .container {
-        margin-top: 80px;
+        padding-top: 80px;
     }
     
     h1 {
-        font-size: 32px;
+        font-size: 40px;
+        margin-bottom: 16px;
     }
     
     h2 {
-        font-size: 18px;
+        font-size: 20px;
+        margin-bottom: 48px;
+    }
+    
+    p {
+        margin-bottom: 48px;
+    }
+}
+
+/* Larger screens */
+@media (min-width: 1024px) {
+    .container {
+        padding-top: 120px;
+    }
+    
+    h1 {
+        font-size: 44px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000000;
+        color: #ffffff;
+    }
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+    .social-links a {
+        opacity: 1;
+    }
+}
+
+/* Safari fixes */
+@supports (-webkit-touch-callout: none) {
+    .social-links .fa {
+        font-size: 24px !important;
+        width: 24px !important;
+        height: 24px !important;
     }
 }
