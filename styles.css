@@ -1,143 +1,72 @@
-/* Modern CSS Reset */
-*, *::before, *::after {
-    box-sizing: border-box;
+/* Base styles */
+:root {
+    --background: #000000;
+    --text: #ffffff;
+    --spacing: 2rem;
+}
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Root Variables */
-:root {
-    --spacing-base: clamp(1rem, 2vw, 2rem);
-    --max-width: min(90vw, 1200px);
-    --color-text: #ffffff;
-    --color-background: #000000;
-    --color-accent: #951C02;
-}
-
-/* Base Styles */
 body {
-    font-family: "Raleway", system-ui, sans-serif;
-    background: var(--color-background);
-    color: var(--color-text);
-    min-height: 100vh;
-    line-height: 1.5;
+    background: var(--background);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.6;
+    padding: var(--spacing);
 }
 
-/* Layout */
 .container {
-    width: var(--max-width);
-    margin-inline: auto;
-    padding: var(--spacing-base);
-    display: grid;
-    gap: calc(var(--spacing-base) * 2);
-}
-
-/* Header Section */
-.header {
-    display: grid;
-    place-items: center;
-    gap: calc(var(--spacing-base) * 2);
-    padding-block: calc(var(--spacing-base) * 4);
-}
-
-/* Navigation */
-.navbar {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-base);
-    padding-block: var(--spacing-base);
-}
-
-.navbar-list {
-    list-style: none;
-    display: flex;
-    gap: var(--spacing-base);
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-/* Canvas Background */
-#canvas-container {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-}
-
-canvas {
-    width: 100%;
-    height: 100%;
-    opacity: 0.8;
+    max-width: 65ch;
+    margin: 15vh auto;
+    padding: 0 var(--spacing);
 }
 
 /* Typography */
 h1 {
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: 2.5rem;
     font-weight: 300;
-    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
 }
 
 h2 {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: 1.25rem;
     font-weight: 300;
+    margin-bottom: 2rem;
+    opacity: 0.8;
 }
 
-/* Links and Buttons */
-.button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75em 1.5em;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    color: var(--color-text);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.2s ease;
+p {
+    margin-bottom: 2.5rem;
 }
 
-.button:hover {
-    border-color: var(--color-accent);
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1.5rem;
 }
 
-/* Content Sections */
-section {
-    display: grid;
-    gap: var(--spacing-base);
-    padding-block: calc(var(--spacing-base) * 2);
+.social-links a {
+    color: var(--text);
+    font-size: 1.5rem;
+    opacity: 0.6;
+    transition: opacity 0.2s;
 }
 
-/* Projects Grid */
-.projects-grid {
-    display: grid;
-    gap: calc(var(--spacing-base) * 2);
+.social-links a:hover {
+    opacity: 1;
 }
 
-.project {
-    display: grid;
-    grid-template-columns: 1fr min(65ch, 100%);
-    gap: var(--spacing-base);
-    align-items: start;
-}
-
-@media (max-width: 768px) {
-    .project {
-        grid-template-columns: 1fr;
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        margin: 10vh auto;
     }
-}
-
-/* Form Elements */
-form {
-    display: grid;
-    gap: var(--spacing-base);
-    max-width: 65ch;
-}
-
-input, textarea {
-    padding: 0.75em;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    color: var(--color-text);
+    
+    h1 {
+        font-size: 2rem;
+    }
 }
