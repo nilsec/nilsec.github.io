@@ -1,97 +1,143 @@
-/* Reset */
-* {
+/* Modern CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Base */
+/* Root Variables */
+:root {
+    --spacing-base: clamp(1rem, 2vw, 2rem);
+    --max-width: min(90vw, 1200px);
+    --color-text: #ffffff;
+    --color-background: #000000;
+    --color-accent: #951C02;
+}
+
+/* Base Styles */
 body {
-    font-family: "Raleway", sans-serif;
-    color: #fff;
-    background: #000;
-    line-height: 1.6;
-    padding: 20px;
-}
-
-/* Canvas */
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
+    font-family: "Raleway", system-ui, sans-serif;
+    background: var(--color-background);
+    color: var(--color-text);
+    min-height: 100vh;
+    line-height: 1.5;
 }
 
 /* Layout */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
+    width: var(--max-width);
+    margin-inline: auto;
+    padding: var(--spacing-base);
+    display: grid;
+    gap: calc(var(--spacing-base) * 2);
 }
 
-/* Typography */
-h1 {
-    font-size: 48px;
-    margin: 40px 0 20px 0;
-    font-weight: 300;
-}
-
-h2 {
-    font-size: 24px;
-    margin: 0 0 40px 0;
-    font-weight: 300;
+/* Header Section */
+.header {
+    display: grid;
+    place-items: center;
+    gap: calc(var(--spacing-base) * 2);
+    padding-block: calc(var(--spacing-base) * 4);
 }
 
 /* Navigation */
 .navbar {
-    margin: 40px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-base);
+    padding-block: var(--spacing-base);
 }
 
 .navbar-list {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: var(--spacing-base);
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-/* Links */
-a {
-    color: #fff;
-    text-decoration: none;
-    transition: opacity 0.2s;
+/* Canvas Background */
+#canvas-container {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
 }
 
-a:hover {
+canvas {
+    width: 100%;
+    height: 100%;
     opacity: 0.8;
 }
 
-/* Buttons */
+/* Typography */
+h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 300;
+}
+
+/* Links and Buttons */
 .button {
-    display: inline-block;
-    padding: 8px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75em 1.5em;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 4px;
-    color: #fff;
+    color: var(--color-text);
     text-decoration: none;
-    margin-right: 10px;
-    transition: all 0.2s;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
 }
 
 .button:hover {
-    border-color: #951C02;
+    border-color: var(--color-accent);
 }
 
-/* Sections */
+/* Content Sections */
 section {
-    margin: 60px 0;
+    display: grid;
+    gap: var(--spacing-base);
+    padding-block: calc(var(--spacing-base) * 2);
 }
 
-/* Content */
-p {
-    font-size: 18px;
-    margin-bottom: 20px;
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    gap: calc(var(--spacing-base) * 2);
+}
+
+.project {
+    display: grid;
+    grid-template-columns: 1fr min(65ch, 100%);
+    gap: var(--spacing-base);
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .project {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Form Elements */
+form {
+    display: grid;
+    gap: var(--spacing-base);
+    max-width: 65ch;
+}
+
+input, textarea {
+    padding: 0.75em;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: var(--color-text);
 }
