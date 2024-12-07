@@ -1,72 +1,92 @@
-/* Base styles */
-:root {
-    --background: #000000;
-    --text: #ffffff;
-    --spacing: 2rem;
-}
-
-* {
+/* Modern CSS Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
+/* Remove default margin in browsers */
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+/* Base styles with px units for consistency */
 body {
-    background: var(--background);
-    color: var(--text);
-    font-family: 'Inter', -apple-system, sans-serif;
-    line-height: 1.6;
-    padding: var(--spacing);
+    background-color: #000000;
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 32px;
 }
 
 .container {
-    max-width: 65ch;
-    margin: 15vh auto;
-    padding: 0 var(--spacing);
+    width: 100%;
+    max-width: 650px;
+    margin: 120px auto 0;
+    padding: 0 20px;
 }
 
-/* Typography */
 h1 {
-    font-size: 2.5rem;
+    font-size: 40px;
     font-weight: 300;
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
 }
 
 h2 {
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: 300;
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
     opacity: 0.8;
 }
 
 p {
-    margin-bottom: 2.5rem;
+    font-size: 16px;
+    margin-bottom: 40px;
 }
 
 /* Social Links */
 .social-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 24px;
 }
 
 .social-links a {
-    color: var(--text);
-    font-size: 1.5rem;
+    color: #ffffff;
+    text-decoration: none;
     opacity: 0.6;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s ease;
+}
+
+.social-links a i {
+    font-size: 24px;
 }
 
 .social-links a:hover {
     opacity: 1;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments using pixels */
 @media (max-width: 600px) {
     .container {
-        margin: 10vh auto;
+        margin-top: 80px;
     }
     
     h1 {
-        font-size: 2rem;
+        font-size: 32px;
+    }
+    
+    h2 {
+        font-size: 18px;
     }
 }
