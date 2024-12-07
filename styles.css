@@ -1,79 +1,97 @@
-/* Base styles */
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
+    font-family: "Raleway", sans-serif;
     color: #fff;
     background: #000;
-    margin: 0;
+    line-height: 1.6;
     padding: 20px;
 }
 
-/* Canvas positioning for Game of Life */
+/* Canvas */
 canvas {
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
     width: 100%;
     height: 100%;
-    z-index: -1;
 }
 
-/* Basic content width constraint */
+/* Layout */
 .container {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Basic typography */
-h1, h2, h3, h4, h5, h6 {
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-    line-height: 1.2;
+/* Typography */
+h1 {
+    font-size: 48px;
+    margin: 40px 0 20px 0;
+    font-weight: 300;
 }
 
-p {
-    margin-bottom: 1em;
+h2 {
+    font-size: 24px;
+    margin: 0 0 40px 0;
+    font-weight: 300;
 }
 
-/* Basic links */
+/* Navigation */
+.navbar {
+    margin: 40px 0;
+}
+
+.navbar-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+/* Links */
 a {
     color: #fff;
-    text-decoration: underline;
+    text-decoration: none;
+    transition: opacity 0.2s;
 }
 
 a:hover {
     opacity: 0.8;
 }
 
-/* Basic spacing for sections */
-section {
-    margin-bottom: 2em;
-}
-
-/* Basic image styles */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Basic form elements */
-input, textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 1em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-/* Basic button styles */
-button {
+/* Buttons */
+.button {
+    display: inline-block;
     padding: 8px 16px;
     background: transparent;
-    border: 1px solid #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
     color: #fff;
-    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: all 0.2s;
 }
 
-button:hover {
-    background: rgba(255, 255, 255, 0.1);
+.button:hover {
+    border-color: #951C02;
+}
+
+/* Sections */
+section {
+    margin: 60px 0;
+}
+
+/* Content */
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
 }
