@@ -1,233 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Nils Eckstein</title>
-  <meta name="Personal Page" content="">
-  <meta name="Nils Eckstein" content="">
-
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/styles.css">
-
-  <!-- JS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <body onscroll="tick()">
- <div id="canvas-container">
-  <canvas id="myCanvas" width="1000" height="1000" style="border:0px solid #000000;"></canvas>
-  </div>
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nils Eckstein</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<div id="toshow">
-      <div class="button button-primary" id="clickShow" onclick="hideBody(); killLife()">Work</div>
-      <div class="button button-primary" id="clickRun" onclick="startLife();">Run</div>
-</div>
+<body onscroll="tick()">
+    <div id="canvas-container">
+        <canvas id="myCanvas" width="1000" height="1000"></canvas>
+    </div>
 
-<div id="tohide">
-  <div class="container">
-  
-    <section class="header">
-      <h2 class="title">Nils Eckstein</h2>
-      <h5 class="title">Machine Learning Research Scientist</h2>
-      <a class="button button-primary" href="eckstein_nils_cv.pdf">CV</a>
-      <a class="button button-primary" href="#exampleEmailInput">Contact</a>
-      <div class="button button-primary" id="clickMe" onclick="hideBody()">Play</div>
-      <div class="value-props row">
-        <div class="four columns value-prop">
-      </div>
-    </section>
-    <div class="navbar-spacer"></div>
-    <nav class="navbar">
-      <div class="container">
-        <ul class="navbar-list">
-          <li class="navbar-item"><a class="navbar-link" href="#aboutme">About Me</a></li>
-          <li class="navbar-item">
-            <a class="navbar-link" href="#projects">Projects</a>
-          </li>
-          <li class="navbar-item"><a class="navbar-link" href="#art">Art</a></li>
-          <li class="navbar-item">
-            <a class="navbar-link" href="#curiousthings">Curious Things</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
- <div class="docs-section" id="aboutme">
-      <h6 class="docs-header">About Me</h6>
-     <div class="container">
-        <div class="section_text">
-      <p>Hi, I am Nils. I am a machine learning researcher working on DNN interpretability. Before that I was doing my PhD at ETH Zurich and HHMI Janelia Research Campus where I worked on the development of computer vision algorithms for the analysis of large scale biological image datasets, in particular the recently imaged <a class="text-link" href=https://fafb.catmaid.virtualflybrain.org/?pid=1&zp=132880&yp=241444&xp=529482&tool=navigator&sid0=1&s0=8>fruit fly brain</a> (zoom in to see
-      individual neurons, mitochondria and other structures). Before becoming fascinated by (real & artificial) brains, I studied physics and worked on simulating the supermassive active black holes in the center of galaxies. Besides that I like to make music, dabble in generative art, and think about how to become immortal. I believe that we might be the last generation of humans that still have to die. Depressing, right?      
-</div>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <div id="social-test">
-  <ul class="social">
-    <li><a href="https://twitter.com/bobqubit"><i class="fa fa-twitter" aria-hidden="true"></a></i></li>
-    <li><a href="https://www.linkedin.com/in/nils-eckstein-176b93129/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-    <li><a href="https://github.com/nilsec"><i class="fa fa-github" aria-hidden="true"></a></i></li>
-  </li>
-  </ul>
-  </div>
- </div>
+    <div id="toshow">
+        <div class="button button-primary" id="clickShow" onclick="hideBody(); killLife()">Work</div>
+        <div class="button button-primary" id="clickRun" onclick="startLife();">Run</div>
+    </div>
 
-<div class="docs-section" id="projects">
-   <h6 class="docs-header">Projects</h6>
-    <div class="container">
-        <div></div> <!-- Hacky fix to remove offset of first div in this container. Fix properly.-->
-            <div class="eleven columns">
-                <div class="project">
-                    <h3 class="docs-header">Microtubule Tracking in large scale EM datasets</h3>
-                    <a href="https://arxiv.org/abs/2009.08371">
-                        <img src="assets/mts.png" alt="Microtubule Tracking Method Overview" style="float:left;width:15vw;min-width:100px;">
-                        </a>
-                        <div class="project_text">
-                        A method and library for automatic tracking of microtubules in terabyte 
-                        scale EM datasets. This is made possible by combining deep learning 
-                        and discrete optimisation, exploiting priors on microtubule structure. We managed to increase tracking accuracy by more than 50% and propose a highly efficient ILP formulation that leads to 4 orders of magnitude faster solve times compared to a naive encoding. <a href="https://github.com/nilsec/micron" class="text-link">Code</a>.
-                        </div>
+    <div id="tohide">
+        <div class="container">
+            <section class="header">
+                <h2 class="title">Nils Eckstein</h2>
+                <h5 class="title">Machine Learning Research Scientist</h5>
+                <a class="button button-primary" href="eckstein_nils_cv.pdf">CV</a>
+                <a class="button button-primary" href="#exampleEmailInput">Contact</a>
+                <div class="button button-primary" id="clickMe" onclick="hideBody()">Play</div>
+                <div class="value-props row">
+                    <div class="four columns value-prop">
+                    </div>
                 </div>
-             </div>
+            </section>
 
-       <div class="eleven columns">
-                <div class="project">
-                    <h3 class="docs-header">Neurotransmitter Classification</h3>
-                    <a href="https://www.biorxiv.org/content/10.1101/2020.06.12.148775v2">
-                        <img src="assets/nts.png" alt="Neurotransmitters in the brain" style="float:left;width:15vw;min-width:100px;">
-                    </a>
-                        <div class="project_text">
-                        A surprising finding that deep neural networks are able to predict the neurotransmitter of a given presynaptic site by looking at electron microscopy images of the synaptic site alone. A task that humans cannot generally perform in the fruit fly brain. <a href="https://github.com/funkelab/synister" class="text-link">Code</a>.
-                        </div>
+            <nav class="navbar">
+                <div class="container">
+                    <ul class="navbar-list">
+                        <li class="navbar-item"><a class="navbar-link" href="#aboutme">About Me</a></li>
+                        <li class="navbar-item"><a class="navbar-link" href="#projects">Projects</a></li>
+                        <li class="navbar-item"><a class="navbar-link" href="#art">Art</a></li>
+                        <li class="navbar-item"><a class="navbar-link" href="#curiousthings">Curious Things</a></li>
+                    </ul>
                 </div>
-            </div>
+            </nav>
 
-       <div class="eleven columns">
-                <div class="project">
-                    <h3 class="docs-header">Discriminative Attribution from Counterfactuals</h3>
-                    <a href="https://arxiv.org/abs/2109.13412">
-                        <img src="assets/discr_attr.png" alt="Discriminative Attribution" style="float:left;width:15vw;min-width:100px;">
-                    </a>
-                        <div class="project_text">
-                    A novel method for DNN interpretability that allows humans to understand subtle class differences as learned by an image classifier. We used it to uncover so far unknown phenotypical differences in synapses that express different neurotransmitters. <a href="https://dac-method.github.io" class="text-link">Code</a>.</div>
-                </div>
-            </div>
-       <div class="eleven columns">
-                <div class="project">
-                    <h3 class="docs-header">Whole Cell Organelle Segmentation</h3>
-                    <a href="https://www.nature.com/articles/s41586-021-03977-3">
-                        <img src="assets/whole_cell.png" alt="Whole Cell Organelle Segmentation" style="float:left;width:15vw;min-width:100px;">
-                    </a>
-                        <div class="project_text">
-                            I helped segmenting nearly all organelles in super high resolution isotropic EM datasets, resulting in probably the most accurate map of a cell we have to date. You can browse through the data <a href="https://openorganelle.janelia.org" class="text-link">here</a>. 
-                        </div>
-                </div>
-            </div>
-       <div class="eleven columns">
-                <div class="project">
-                    <h3 class="docs-header">Reverse game of life</h3>
-                    <a href="https://github.com/nilsec/isle">
-                        <img src="assets/isle.png" alt="Game of life image" style="float:left;width:15vw;min-width:100px;">
-                    </a>
-                    <div class="project_text">
-                        For this website I was interested in picking a start state for the game of life that eventually converges to a message or an image. Unfortunately the game of life is irreversible as information is destroyed constantly. However, we can still search for pre-images of a given state that will lead to the target state after one step of evolution. This library utilizes integer linear programming to find a valid pre-image of a game of life state.
+            <div class="docs-section" id="aboutme">
+                <h6 class="docs-header">About Me</h6>
+                <div class="container">
+                    <div class="section_text">
+                        <p>Hi, I am Nils. I am a machine learning researcher working on DNN interpretability. Before that I was doing my PhD at ETH Zurich and HHMI Janelia Research Campus where I worked on the development of computer vision algorithms for the analysis of large scale biological image datasets, in particular the recently imaged <a class="text-link" href="https://fafb.catmaid.virtualflybrain.org/?pid=1&zp=132880&yp=241444&xp=529482&tool=navigator&sid0=1&s0=8">fruit fly brain</a> (zoom in to see individual neurons, mitochondria and other structures). Before becoming fascinated by (real & artificial) brains, I studied physics and worked on simulating the supermassive active black holes in the center of galaxies. Besides that I like to make music, dabble in generative art, and think about how to become immortal. I believe that we might be the last generation of humans that still have to die. Depressing, right?</p>
+                    </div>
+                    <div id="social-test">
+                        <ul class="social">
+                            <li><a href="https://twitter.com/bobqubit"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/nils-eckstein-176b93129/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li><a href="https://github.com/nilsec"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-       <div class="eleven columns">
-                <div class="project">
-                    <h3 class="docs-header">A strange model of computation - Integer Gradient Descent</h3>
-                    <a href="assets/integer_grad.pdf">
-                        <img src="assets/integer_grad.png" alt="Integer gradient descent illustration" style="float:left;width:15vw;min-width:100px;">
-                    </a>
-                    <div class="project_text">
-                        An esoteric model of computation that can be understood as a generalization of <a href="https://en.wikipedia.org/wiki/FRACTRAN" class="text-link"> FRACTRANs </a> and used to formulate an analytical version of the <a href="https://en.wikipedia.org/wiki/Collatz_conjecture" class="text-link">Collatz conjecture</a>. It is also Turing complete.
+
+            <div class="docs-section" id="projects">
+                <h6 class="docs-header">Projects</h6>
+                <div class="container">
+                    <div class="eleven columns">
+                        <div class="project">
+                            <h3 class="docs-header">Microtubule Tracking in large scale EM datasets</h3>
+                            <a href="https://arxiv.org/abs/2009.08371">
+                                <img src="assets/mts.png" alt="Microtubule Tracking Method Overview">
+                            </a>
+                            <div class="project_text">
+                                A method and library for automatic tracking of microtubules in terabyte scale EM datasets. This is made possible by combining deep learning and discrete optimisation, exploiting priors on microtubule structure. We managed to increase tracking accuracy by more than 50% and propose a highly efficient ILP formulation that leads to 4 orders of magnitude faster solve times compared to a naive encoding. <a href="https://github.com/nilsec/micron" class="text-link">Code</a>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="eleven columns">
+                        <div class="project">
+                            <h3 class="docs-header">Neurotransmitter Classification</h3>
+                            <a href="https://www.biorxiv.org/content/10.1101/2020.06.12.148775v2">
+                                <img src="assets/nts.png" alt="Neurotransmitters in the brain">
+                            </a>
+                            <div class="project_text">
+                                A surprising finding that deep neural networks are able to predict the neurotransmitter of a given presynaptic site by looking at electron microscopy images of the synaptic site alone. A task that humans cannot generally perform in the fruit fly brain. <a href="https://github.com/funkelab/synister" class="text-link">Code</a>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="eleven columns">
+                        <div class="project">
+                            <h3 class="docs-header">Discriminative Attribution from Counterfactuals</h3>
+                            <a href="https://arxiv.org/abs/2109.13412">
+                                <img src="assets/discr_attr.png" alt="Discriminative Attribution">
+                            </a>
+                            <div class="project_text">
+                                A novel method for DNN interpretability that allows humans to understand subtle class differences as learned by an image classifier. We used it to uncover so far unknown phenotypical differences in synapses that express different neurotransmitters. <a href="https://dac-method.github.io" class="text-link">Code</a>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="eleven columns">
+                        <div class="project">
+                            <h3 class="docs-header">Whole Cell Organelle Segmentation</h3>
+                            <a href="https://www.nature.com/articles/s41586-021-03977-3">
+                                <img src="assets/whole_cell.png" alt="Whole Cell Organelle Segmentation">
+                            </a>
+                            <div class="project_text">
+                                I helped segmenting nearly all organelles in super high resolution isotropic EM datasets, resulting in probably the most accurate map of a cell we have to date. You can browse through the data <a href="https://openorganelle.janelia.org" class="text-link">here</a>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="eleven columns">
+                        <div class="project">
+                            <h3 class="docs-header">Reverse game of life</h3>
+                            <a href="https://github.com/nilsec/isle">
+                                <img src="assets/isle.png" alt="Game of life image">
+                            </a>
+                            <div class="project_text">
+                                For this website I was interested in picking a start state for the game of life that eventually converges to a message or an image. Unfortunately the game of life is irreversible as information is destroyed constantly. However, we can still search for pre-images of a given state that will lead to the target state after one step of evolution. This library utilizes integer linear programming to find a valid pre-image of a game of life state.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="eleven columns">
+                        <div class="project">
+                            <h3 class="docs-header">A strange model of computation - Integer Gradient Descent</h3>
+                            <a href="assets/integer_grad.pdf">
+                                <img src="assets/integer_grad.png" alt="Integer gradient descent illustration">
+                            </a>
+                            <div class="project_text">
+                                An esoteric model of computation that can be understood as a generalization of <a href="https://en.wikipedia.org/wiki/FRACTRAN" class="text-link">FRACTRANs</a> and used to formulate an analytical version of the <a href="https://en.wikipedia.org/wiki/Collatz_conjecture" class="text-link">Collatz conjecture</a>. It is also Turing complete.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="eleven columns">
+                        <div class="project">
+                            <h3 class="docs-header">Comatch - Graph matching minimizing topological errors</h3>
+                            <a href="https://github.com/funkey/comatch">
+                                <img src="assets/comatch.png" alt="Graph matching illustration">
+                            </a>
+                            <div class="project_text">
+                                This library implements a bi-partite graph matching algorithm that minimizes component merge and split error.
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-       <div class="eleven columns">
-                <div class="project">
-                    <h3 class="docs-header">Comatch - Graph matching minimizing topological errors</h3>
-                    <a href="https://github.com/funkey/comatch">
-                        <img src="assets/comatch.png" alt="Graph matching illustration" style="float:left;width:15vw;min-width:100px;">
-                    </a>
-                    <div class="project_text">
-                        This library implements a bi-partite graph matching algorithm that minimizes component merge and split error.
+
+            <div class="docs-section" id="art">
+                <h6 class="docs-header">Art</h6>
+                <div class="container" id="art">
+                    <div class="auto-resizable-iframe">
+                        <div>
+                            <iframe frameborder="0" allowfullscreen="" src="https://www.youtube.com/embed/mo505BQKMns"></iframe>
+                        </div>
+                    </div>
+                    <div class="auto-resizable-iframe">
+                        <div>
+                            <iframe frameborder="0" allowfullscreen="" src="https://www.youtube.com/embed/gZhynA1ISLQ"></iframe>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="docs-section" id="curiousthings">
+                <h6 class="docs-header">Curious Things</h6>
+                <div class="container">
+                    <div class="curiousthing">
+                        <a href="https://www.micropublication.org">Micropublications</a>
+                    </div>
+                    <div class="curiousthing">
+                        <a href="https://www.lesswrong.com/posts/TxcRbCYHaeL59aY7E/meditations-on-moloch">Moloch</a>
+                    </div>
+                    <div class="curiousthing">
+                        <a href="https://en.m.wikipedia.org/wiki/Entropy_and_life">Entropy and Life</a>
+                    </div>
+                    <div class="curiousthing">
+                        <a href="https://www.gwern.net/Turing-complete">Surprisingly Turing Complete</a>
+                    </div>
+                    <div class="curiousthing">
+                        <a href="https://www.ted.com/talks/david_deutsch_chemical_scum_that_dream_of_distant_quasars?language=en">Chemical scum that dreams of distant quasars</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <form action="https://formspree.io/f/xnqodpzy" method="POST">
+                    <div class="row">
+                        <div class="six columns">
+                            <label for="exampleEmailInput">Get in touch</label>
+                            <input class="u-full-width" type="email" style="color: #000000;" placeholder="test@mailbox.com" id="exampleEmailInput" name="_replyto">
+                        </div>
+                        <textarea name="message" class="u-full-width" style="color: #000000;" placeholder="Hi Nils …" id="exampleMessage"></textarea>
+                        <input class="button-primary" type="submit" value="Submit">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 
-<div class="docs-section" id="art">
-      <h6 class="docs-header">Art</h6>
-      <div class="container", id="art">
-<div class="auto-resizable-iframe">
-  <div>
-    <iframe frameborder="0" allowfullscreen="" src="https://www.youtube.com/embed/mo505BQKMns"></iframe>
-  </div>
-</div>
-<div class="auto-resizable-iframe">
-  <div>
-    <iframe frameborder="0" allowfullscreen="" src="https://www.youtube.com/embed/gZhynA1ISLQ"></iframe>
-  </div>
-</div>
-</div>
-</div>
-
-<div class="docs-section" id="curiousthings">
-      <h6 class="docs-header">Curious Things</h6>
-      <div class="container">
-            <div class="curiousthing">
-                <a href="https://www.micropublication.org">Micropublications</a>
-            </div>
-            <div class="curiousthing">
-                <a href="https://www.lesswrong.com/posts/TxcRbCYHaeL59aY7E/meditations-on-moloch">Moloch</a>
-            </div>
-            <div class="curiousthing">
-                <a href="https://en.m.wikipedia.org/wiki/Entropy_and_life">Entropy and Life</a>
-            </div>
-            <div class="curiousthing">
-                <a href="https://www.gwern.net/Turing-complete">Surprisingly Turing Complete</a>
-            </div>
-            <div class="curiousthing">
-                <a href="https://www.ted.com/talks/david_deutsch_chemical_scum_that_dream_of_distant_quasars?language=en">Chemical scum that dreams of distant quasars</a>
-            </div>
-
-      </div>
-</div>
-
-<div class="container">
-<form action="https://formspree.io/f/xnqodpzy" method="POST">
-  <div class="row">
-    <div class="six columns">
-      <label for="exampleEmailInput">Get in touch</label>
-      <input class="u-full-width" type="email" style="color: #000000;" placeholder="test@mailbox.com" id="exampleEmailInput" name="_replyto">
-    </div>
-  <textarea name="message" class="u-full-width" style="color: #000000;" placeholder="Hi Nils …" id="exampleMessage"></textarea>
-  <input class="button-primary" type="submit" value="Submit">
-</form>
-</div>
-</div>
-
-
-<script type="text/javascript" src="scripts.js">
-</script>
-
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script type="text/javascript" src="scripts.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </body>
 </html>
